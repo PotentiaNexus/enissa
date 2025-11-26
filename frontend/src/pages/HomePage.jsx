@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calculator, Palette, Star, Sparkles } from 'lucide-react';
+import { Calculator, Palette, Star, Sparkles, Brain, Zap, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
@@ -23,6 +23,30 @@ export const HomePage = () => {
       icon: Palette,
       color: 'from-accent to-accent-light',
       path: '/draw'
+    },
+    {
+      id: 'memory',
+      title: 'Gedächtnisspiel',
+      description: 'Trainiere dein Gedächtnis!',
+      icon: Brain,
+      color: 'from-[hsl(270_75%_65%)] to-[hsl(270_75%_80%)]',
+      path: '/memory'
+    },
+    {
+      id: 'sequence',
+      title: 'Sequenz-Spiel',
+      description: 'Merke dir die Reihenfolge!',
+      icon: Zap,
+      color: 'from-secondary to-secondary-light',
+      path: '/sequence'
+    },
+    {
+      id: 'focus',
+      title: 'Fokus-Training',
+      description: 'Verbessere deine Konzentration!',
+      icon: Eye,
+      color: 'from-success to-success-light',
+      path: '/focus'
     }
   ];
 
@@ -51,7 +75,7 @@ export const HomePage = () => {
 
       {/* Main Content */}
       <main className="flex-1 container mx-auto px-4 py-8 md:py-12 max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {games.map((game, index) => {
             const Icon = game.icon;
             return (
@@ -60,7 +84,7 @@ export const HomePage = () => {
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ 
-                  delay: index * 0.2,
+                  delay: index * 0.1,
                   type: 'spring',
                   stiffness: 200,
                   damping: 15
@@ -69,24 +93,24 @@ export const HomePage = () => {
                 <Card className="h-full overflow-hidden border-2 hover:border-primary transition-all duration-300 shadow-medium hover:shadow-large">
                   <div className="h-full flex flex-col">
                     {/* Colorful Header */}
-                    <div className={`bg-gradient-to-br ${game.color} p-8 md:p-12 text-center`}>
-                      <div className="inline-block p-4 md:p-6 bg-card rounded-2xl shadow-large mb-4">
-                        <Icon className="w-12 h-12 md:w-16 md:h-16 text-primary" />
+                    <div className={`bg-gradient-to-br ${game.color} p-6 md:p-8 text-center`}>
+                      <div className="inline-block p-4 md:p-5 bg-card rounded-2xl shadow-large mb-3">
+                        <Icon className="w-10 h-10 md:w-12 md:h-12 text-primary" />
                       </div>
-                      <h2 className="text-2xl md:text-3xl font-display font-bold text-card mb-2">
+                      <h2 className="text-xl md:text-2xl font-display font-bold text-card mb-2">
                         {game.title}
                       </h2>
-                      <p className="text-base md:text-lg text-card/90 font-medium">
+                      <p className="text-sm md:text-base text-card/90 font-medium">
                         {game.description}
                       </p>
                     </div>
 
                     {/* Button Area */}
-                    <div className="p-6 md:p-8 mt-auto">
+                    <div className="p-4 md:p-6 mt-auto">
                       <Button
                         size="lg"
                         onClick={() => navigate(game.path)}
-                        className="w-full text-lg md:text-xl py-6 md:py-8 rounded-2xl font-display font-bold shadow-medium hover:shadow-large btn-bounce bg-gradient-to-r from-primary to-primary-light hover:opacity-90 border-0"
+                        className="w-full text-base md:text-lg py-5 md:py-6 rounded-xl font-display font-bold shadow-medium hover:shadow-large btn-bounce bg-gradient-to-r from-primary to-primary-light hover:opacity-90 border-0"
                       >
                         Jetzt spielen! 🎮
                       </Button>
@@ -98,12 +122,49 @@ export const HomePage = () => {
           })}
         </div>
 
-        {/* Fun decoration elements */}
+        {/* Info Section */}
         <motion.div
-          className="mt-12 text-center"
+          className="mt-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
+        >
+          <Card className="p-6 md:p-8 bg-gradient-to-br from-muted/50 to-background max-w-3xl mx-auto">
+            <div className="text-center space-y-4">
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground">
+                🧠 Konzentrations-Training
+              </h3>
+              <p className="text-base md:text-lg text-foreground/80">
+                Diese Spiele helfen dir, deine Konzentration zu verbessern, dein Gedächtnis zu trainieren und in der Schule besser zu werden!
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4">
+                <div className="p-3 bg-card rounded-xl">
+                  <div className="text-2xl mb-1">🎯</div>
+                  <div className="text-sm font-semibold">Fokus</div>
+                </div>
+                <div className="p-3 bg-card rounded-xl">
+                  <div className="text-2xl mb-1">🧩</div>
+                  <div className="text-sm font-semibold">Gedächtnis</div>
+                </div>
+                <div className="p-3 bg-card rounded-xl">
+                  <div className="text-2xl mb-1">⚡</div>
+                  <div className="text-sm font-semibold">Reaktion</div>
+                </div>
+                <div className="p-3 bg-card rounded-xl">
+                  <div className="text-2xl mb-1">📚</div>
+                  <div className="text-sm font-semibold">Lernen</div>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Fun decoration elements */}
+        <motion.div
+          className="mt-8 text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
         >
           <div className="flex items-center justify-center gap-2 text-3xl md:text-4xl">
             <motion.span
