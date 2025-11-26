@@ -33,6 +33,14 @@ export const HomePage = () => {
       path: '/memory'
     },
     {
+      id: 'puzzle',
+      title: 'IQ-Puzzle',
+      description: 'Disney Schiebepuzzle!',
+      icon: Puzzle,
+      color: 'from-[hsl(280_65%_60%)] to-[hsl(320_75%_70%)]',
+      path: '/puzzle'
+    },
+    {
       id: 'sequence',
       title: 'Sequenz-Spiel',
       description: 'Merke dir die Reihenfolge!',
