@@ -63,8 +63,16 @@ export const HomePage = () => {
 
   return (
     <div className="min-h-screen star-pattern flex flex-col">
+      {/* Player Profile Modal */}
+      <PlayerProfile onProfileComplete={setPlayerName} />
+
       {/* Header */}
       <header className="p-6 md:p-8">
+        <div className="flex items-center justify-between max-w-6xl mx-auto mb-4">
+          <div className="flex-1" />
+          <PlayerNameDisplay />
+        </div>
+        
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -79,7 +87,7 @@ export const HomePage = () => {
             <Star className="w-8 h-8 md:w-10 md:h-10 text-accent" />
           </div>
           <p className="text-lg md:text-xl font-medium text-muted-foreground">
-            Deine Lern- und Spiel-App!
+            {playerName ? `Hallo ${playerName}! 👋` : 'Deine Lern- und Spiel-App!'}
           </p>
         </motion.div>
       </header>
