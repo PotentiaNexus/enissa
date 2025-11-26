@@ -103,6 +103,16 @@ export const HomePage = () => {
                     🎯 Effektiv
                   </span>
                 </div>
+                <div className="pt-2">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    onClick={() => navigate('/about')}
+                    className="rounded-xl font-display font-semibold btn-bounce border-2"
+                  >
+                    Mehr über ENISSA erfahren →
+                  </Button>
+                </div>
               </div>
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-large aspect-[4/3]">
