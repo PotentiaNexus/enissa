@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calculator, Palette, Star, Sparkles, Brain, Zap, Eye } from 'lucide-react';
+import { Calculator, Palette, Star, Sparkles, Brain, Zap, Eye, Puzzle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
