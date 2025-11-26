@@ -413,7 +413,7 @@ const MathGamePage = () => {
                 </motion.div>
                 
                 <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-                  Super gemacht!
+                  Super gemacht{playerName !== 'Spieler' ? `, ${playerName}` : ''}!
                 </h2>
                 
                 <div className="space-y-4 mb-8">
