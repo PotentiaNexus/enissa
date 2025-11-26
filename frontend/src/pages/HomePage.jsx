@@ -75,6 +75,49 @@ export const HomePage = () => {
 
       {/* Main Content */}
       <main className="flex-1 container mx-auto px-4 py-8 md:py-12 max-w-6xl">
+        {/* Welcome Section with Photo */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="mb-12"
+        >
+          <Card className="overflow-hidden shadow-large bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 md:p-8 items-center">
+              <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
+                  Willkommen bei ENISSA! 🌟
+                </h2>
+                <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
+                  Spiele, lerne und wachse mit uns! Diese App wurde speziell für dich entwickelt, 
+                  um dir beim Lernen zu helfen und dabei viel Spaß zu haben.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-primary text-primary-foreground rounded-full text-sm font-semibold">
+                    ✨ Macht Spaß
+                  </span>
+                  <span className="px-3 py-1 bg-success text-success-foreground rounded-full text-sm font-semibold">
+                    🧠 Lehrreich
+                  </span>
+                  <span className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm font-semibold">
+                    🎯 Effektiv
+                  </span>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="relative rounded-2xl overflow-hidden shadow-large aspect-[4/3]">
+                  <img
+                    src="https://customer-assets.emergentagent.com/job_math-art-games/artifacts/iiy91kll_m.jpeg"
+                    alt="ENISSA Familie"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {games.map((game, index) => {
             const Icon = game.icon;
