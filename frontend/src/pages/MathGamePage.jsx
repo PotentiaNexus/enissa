@@ -18,8 +18,28 @@ const MathGamePage = () => {
   const [showFeedback, setShowFeedback] = useState(false);
   const [streak, setStreak] = useState(0);
   const [maxStreak, setMaxStreak] = useState(0);
+  const [visualMode, setVisualMode] = useState(true); // Show fruits/vegetables
 
   const totalQuestions = 10;
+
+  // Obst und Gemüse für visuelle Darstellung
+  const visualItems = [
+    { emoji: '🍎', name: 'Apfel' },
+    { emoji: '🍊', name: 'Orange' },
+    { emoji: '🍌', name: 'Banane' },
+    { emoji: '🍇', name: 'Traube' },
+    { emoji: '🍓', name: 'Erdbeere' },
+    { emoji: '🍉', name: 'Wassermelone' },
+    { emoji: '🥕', name: 'Karotte' },
+    { emoji: '🥒', name: 'Gurke' },
+    { emoji: '🍅', name: 'Tomate' },
+    { emoji: '🥦', name: 'Brokkoli' },
+    { emoji: '🌽', name: 'Mais' },
+    { emoji: '🍑', name: 'Pfirsich' },
+    { emoji: '🍐', name: 'Birne' },
+    { emoji: '🥔', name: 'Kartoffel' },
+    { emoji: '🍆', name: 'Aubergine' },
+  ];
 
   const difficulties = [
     { id: 'easy', name: 'Leicht', desc: '1-10', color: 'from-success to-success-light', emoji: '😊' },
