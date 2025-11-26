@@ -96,12 +96,18 @@ const MathGamePage = () => {
       }
     }
 
+    // Wähle zufällige Obst/Gemüse für diese Aufgabe
+    const item1 = visualItems[Math.floor(Math.random() * visualItems.length)];
+    const item2 = visualItems[Math.floor(Math.random() * visualItems.length)];
+
     return {
       num1,
       num2,
       operation,
       correctAnswer,
-      answers: Array.from(answers).sort(() => Math.random() - 0.5)
+      answers: Array.from(answers).sort(() => Math.random() - 0.5),
+      visualItem1: item1,
+      visualItem2: item2
     };
   };
 
