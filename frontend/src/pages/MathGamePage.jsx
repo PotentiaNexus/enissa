@@ -195,6 +195,14 @@ const MathGamePage = () => {
                   <span className="font-display font-bold text-lg">{streak}🔥</span>
                 </motion.div>
               )}
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setVisualMode(!visualMode)}
+                className="rounded-xl font-display font-semibold btn-bounce border-2"
+              >
+                {visualMode ? '🔢' : '🍎'}
+              </Button>
             </motion.div>
           )}
         </div>
