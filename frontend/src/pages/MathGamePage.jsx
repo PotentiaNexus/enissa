@@ -227,7 +227,7 @@ const MathGamePage = () => {
                   Mathe-Spiele 🎮
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground font-medium">
-                  Wähle deinen Schwierigkeitsgrad!
+                  {playerName !== 'Spieler' ? `Los geht's, ${playerName}! ` : ''}Wähle deinen Schwierigkeitsgrad!
                 </p>
               </div>
 
