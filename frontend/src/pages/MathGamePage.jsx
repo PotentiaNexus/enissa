@@ -10,6 +10,7 @@ import { usePlayerName } from '@/components/PlayerProfile';
 
 const MathGamePage = () => {
   const navigate = useNavigate();
+  const playerName = usePlayerName();
   const [gameState, setGameState] = useState('menu'); // 'menu', 'playing', 'finished'
   const [difficulty, setDifficulty] = useState('easy');
   const [currentQuestion, setCurrentQuestion] = useState(null);
