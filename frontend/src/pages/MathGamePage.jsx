@@ -293,9 +293,63 @@ const MathGamePage = () => {
                   animate={{ scale: 1, opacity: 1 }}
                   className="text-center space-y-8 md:space-y-10"
                 >
-                  <div className="text-5xl md:text-7xl font-display font-bold text-foreground">
-                    {currentQuestion.num1} {currentQuestion.operation} {currentQuestion.num2} = ?
-                  </div>
+                  {visualMode ? (
+                    <div className="space-y-6">
+                      {/* Visuelle Darstellung mit Obst/Gemüse */}
+                      <div className="flex items-center justify-center gap-6 flex-wrap">
+                        {/* Erste Gruppe */}
+                        <div className="flex flex-col items-center gap-2">
+                          <div className="flex flex-wrap justify-center gap-2 max-w-md">
+                            {Array.from({ length: Math.min(currentQuestion.num1, 10) }).map((_, i) => (
+                              <span key={i} className="text-4xl md:text-5xl">
+                                {currentQuestion.visualItem1.emoji}
+                              </span>
+                            ))}
+                          </div>
+                          <span className="text-2xl md:text-3xl font-display font-bold text-primary">
+                            {currentQuestion.num1} {currentQuestion.visualItem1.name}
+                          </span>
+                        </div>
+
+                        {/* Operation */}
+                        <span className="text-6xl md:text-7xl font-display font-bold text-foreground">
+                          {currentQuestion.operation}
+                        </span>
+
+                        {/* Zweite Gruppe */}
+                        {currentQuestion.operation !== '=' && (
+                          <div className="flex flex-col items-center gap-2">
+                            <div className="flex flex-wrap justify-center gap-2 max-w-md">
+                              {Array.from({ length: Math.min(currentQuestion.num2, 10) }).map((_, i) => (
+                                <span key={i} className="text-4xl md:text-5xl">
+                                  {currentQuestion.visualItem2.emoji}
+                                </span>
+                              ))}
+                            </div>
+                            <span className="text-2xl md:text-3xl font-display font-bold text-accent">
+                              {currentQuestion.num2} {currentQuestion.visualItem2.name}
+                            </span>
+                          </div>
+                        )}
+
+                        {/* Fragezeichen */}
+                        <span className="text-6xl md:text-7xl font-display font-bold text-foreground">
+                          = ?
+                        </span>
+                      </div>
+                      
+                      {/* Hinweis wenn Zahlen zu groß */}
+                      {(currentQuestion.num1 > 10 || currentQuestion.num2 > 10) && (
+                        <p className="text-sm text-muted-foreground">
+                          💡 Bei großen Zahlen zeigen wir nur 10 Symbole
+                        </p>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="text-5xl md:text-7xl font-display font-bold text-foreground">
+                      {currentQuestion.num1} {currentQuestion.operation} {currentQuestion.num2} = ?
+                    </div>
+                  )}
 
                   {/* Answer Options */}
                   <div className="grid grid-cols-2 gap-4 md:gap-6">
