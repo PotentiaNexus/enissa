@@ -107,7 +107,7 @@ export const HomePage = () => {
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-large aspect-[4/3]">
                   <img
-                    src="https://customer-assets.emergentagent.com/job_math-art-games/artifacts/iiy91kll_m.jpeg"
+                    src="https://customer-assets.emergentagent.com/job_math-art-games/artifacts/indof2bo_WhatsApp%20Image%202025-11-26%20at%2021.50.32.jpeg"
                     alt="ENISSA Familie"
                     className="w-full h-full object-cover"
                   />
