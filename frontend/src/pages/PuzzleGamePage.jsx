@@ -5,9 +5,11 @@ import { Home, Trophy, Clock, Shuffle, RefreshCw, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { toast } from 'sonner';
+import { usePlayerName } from '@/components/PlayerProfile';
 
 const PuzzleGamePage = () => {
   const navigate = useNavigate();
+  const playerName = usePlayerName();
   const [gameState, setGameState] = useState('menu'); // 'menu', 'playing', 'finished'
   const [difficulty, setDifficulty] = useState('easy');
   const [tiles, setTiles] = useState([]);
