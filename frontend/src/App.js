@@ -6,6 +6,10 @@ import MemoryGamePage from '@/pages/MemoryGamePage';
 import SequenceGamePage from '@/pages/SequenceGamePage';
 import FocusGamePage from '@/pages/FocusGamePage';
 import PuzzleGamePage from '@/pages/PuzzleGamePage';
+import ReadingGamePage from '@/pages/ReadingGamePage';
+import ChristmasGamePage from '@/pages/ChristmasGamePage';
+import ToothBrushingGamePage from '@/pages/ToothBrushingGamePage';
+import AnimalGamePage from '@/pages/AnimalGamePage';
 import AboutPage from '@/pages/AboutPage';
 import { Toaster } from '@/components/ui/sonner';
 import '@/App.css';
@@ -22,6 +26,10 @@ function App() {
           <Route path="/sequence" element={<SequenceGamePage />} />
           <Route path="/focus" element={<FocusGamePage />} />
           <Route path="/puzzle" element={<PuzzleGamePage />} />
+          <Route path="/reading" element={<ReadingGamePage />} />
+          <Route path="/christmas" element={<ChristmasGamePage />} />
+          <Route path="/toothbrushing" element={<ToothBrushingGamePage />} />
+          <Route path="/animals" element={<AnimalGamePage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
       </BrowserRouter>
