@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calculator, Palette, Star, Sparkles, Brain, Zap, Eye, Puzzle, User } from 'lucide-react';
+import { Calculator, Palette, Star, Sparkles, Brain, Zap, Eye, Puzzle, BookOpen, TreePine, Smile, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { PlayerProfile, PlayerNameDisplay } from '@/components/PlayerProfile';
