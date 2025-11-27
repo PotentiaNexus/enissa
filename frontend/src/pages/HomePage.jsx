@@ -20,6 +20,14 @@ export const HomePage = () => {
       path: '/math'
     },
     {
+      id: 'reading',
+      title: 'Lesen lernen',
+      description: 'Klasse 1-5 Geschichten!',
+      icon: BookOpen,
+      color: 'from-[hsl(260_75%_60%)] to-[hsl(260_75%_75%)]',
+      path: '/reading'
+    },
+    {
       id: 'draw',
       title: 'Malen & Zeichnen',
       description: 'Werde kreativ mit Farben!',
@@ -58,6 +66,30 @@ export const HomePage = () => {
       icon: Eye,
       color: 'from-success to-success-light',
       path: '/focus'
+    },
+    {
+      id: 'animals',
+      title: 'Tiere der Welt',
+      description: 'Namen & Herkunft!',
+      icon: Globe,
+      color: 'from-[hsl(150_70%_50%)] to-[hsl(170_65%_55%)]',
+      path: '/animals'
+    },
+    {
+      id: 'christmas',
+      title: 'Weihnachten',
+      description: 'Zimmer & Baum dekorieren!',
+      icon: TreePine,
+      color: 'from-[hsl(0_75%_60%)] to-[hsl(120_70%_45%)]',
+      path: '/christmas'
+    },
+    {
+      id: 'toothbrushing',
+      title: 'Zähneputzen',
+      description: 'Lerne richtig putzen!',
+      icon: Smile,
+      color: 'from-[hsl(180_70%_55%)] to-[hsl(200_75%_60%)]',
+      path: '/toothbrushing'
     }
   ];
 
